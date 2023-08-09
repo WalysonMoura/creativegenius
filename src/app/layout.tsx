@@ -1,35 +1,33 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
+import "./globals.css";
 
-import { ToasterProvider } from '@/components/toaster-provider'
-import { ModalProvider } from '@/components/modal-provider'
-import { CrispProvider } from '@/components/crisp-provider'
+import { ClerkProvider } from "@clerk/nextjs";
 
-import './globals.css'
+import { ToasterProvider } from "@/providers/toaster-provider";
+import { ModalProvider } from "@/providers/modal-provider";
 
-const font = Inter({ subsets: ['latin'] });
+import { Inter } from "next/font/google";
+const font = Inter({ subsets: ["latin"] });
 
+import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: 'Creativa Genius',
-  description: 'AI Platform',
-}
+  title: "Creativa Genius",
+  description: "AI Platform",
+};
 
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <CrispProvider />
-        <body className={font.className}>
-          <ToasterProvider />
-          <ModalProvider />
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
-  )
+    //<ClerkProvider>
+    <html lang="pt-br" suppressHydrationWarning>
+      <body className={font.className}>
+        <ToasterProvider />
+        <ModalProvider />
+        {children}
+      </body>
+    </html>
+    //</ClerkProvider>
+  );
 }
