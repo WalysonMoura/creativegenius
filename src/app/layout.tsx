@@ -23,8 +23,9 @@ export default async function RootLayout({
     //<ClerkProvider>
     <html lang="pt-br" suppressHydrationWarning>
       <body className={font.className}>
-        <ToasterProvider />
-        <ModalProvider />
+        {/* <ToasterProvider />
+      
+       <ModalProvider />* */}
         {children}
       </body>
     </html>
