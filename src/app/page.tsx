@@ -7,7 +7,7 @@ export default function Home() {
     <main className="h-full bg-[#111827] overflow-auto">
       <div className="h-full ">
         <LandingNavbar />
-        <LandingHero />
+        
         <LandingContent />
       </div>
     </main>
